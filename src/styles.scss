@@ -1,0 +1,227 @@
+body {
+  background: linear-gradient(141deg, #9fb8ad 0%, #1fc8db 51%, #2cb5e8 75%);
+  font-family: Noto Sans, Helvetica, sans-serif;
+  color: #666;
+  letter-spacing: 1px;
+  padding: 10px;
+  min-height: 100vh;
+}
+
+/* ----- header css starts here ----- */
+
+header {
+  text-align: center;
+  margin: 10px 0 10px 0;
+
+  .links {
+    text-transform: uppercase;
+    text-align: center;
+    font-size: 150%;
+    margin-top: 20px;
+
+    .link:link,
+    .link:visited {
+      padding: 5px 10px;
+      margin: 20px;
+      color: #fff;
+      text-decoration: none;
+      text-transform: uppercase;
+      border-bottom: 2px solid transparent;
+      transition: all 0.3s;
+      -webkit-transition: all 0.3s;
+      -moz-transition: all 0.3s;
+      -ms-transition: all 0.3s;
+      -o-transition: all 0.3s;
+    }
+
+    .link:hover,
+    .link:active {
+      border-bottom: 2px solid #fff;
+    }
+  }
+}
+
+h1 {
+  text-shadow: 0 0 20px #fefcc9, 10px -10px 30px #feec85,
+    -20px -20px 40px #ffae34, 20px -40px 50px #ec760c, -20px -60px 60px #cd4606,
+    0 -80px 70px #973716, 10px -90px 80px #451b0e;
+  display: inline-block;
+}
+
+h1,
+h2 {
+  color: #666;
+}
+
+/* ----- header css ends here ----- */
+
+/* ----- main content css starts here ----- */
+
+.home-page {
+  margin-top: 20px;
+}
+
+.upload-form {
+  width: 60%;
+  margin: auto;
+  margin-top: 20px;
+  padding: 20px;
+  border: 1px solid #000;
+  padding-left: 20%;
+  background: #eee;
+}
+
+.main-content {
+  width: 80%;
+  margin: auto auto 100px auto;
+}
+
+.main {
+  margin-left: 10px;
+}
+
+.form {
+  width: 50%;
+  float: left;
+  margin-bottom: 50px;
+}
+
+.book-list {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.main-image {
+  text-align: center;
+  margin-top: 20px;
+  img {
+    width: 285px;
+    height: 200px;
+  }
+}
+
+.book {
+  margin: 10px;
+  width: 288px;
+  overflow: hidden;
+
+  img {
+    height: 300px;
+    width: 100%;
+  }
+}
+
+.main-form {
+  color: #222222;
+  font-size: 18px;
+  width: 70%;
+  margin: auto;
+}
+
+.input-control {
+  border: 1px solid #ccc;
+  color: #555555;
+  background-color: #fff;
+  height: 46px;
+  font-size: 18px;
+  line-height: 1.3333333;
+  border-radius: 0;
+  display: block;
+  margin-bottom: 30px;
+  padding: 10px;
+  width: 100%;
+
+  &:focus {
+    outline: none;
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075),
+      0 0 8px rgba(23, 24, 24, 0.6);
+    border: 1px solid #cecece;
+  }
+}
+/* ----- main content css ends here----- */
+
+/* ----- buttons css starts here----- */
+
+button {
+  margin-right: 5px;
+}
+
+.submit-btn {
+  margin-top: 1rem;
+}
+
+.login {
+  text-align: center;
+  padding: 10px;
+  height: 200px;
+  line-height: 200px;
+
+  button {
+    font-size: 20px;
+  }
+}
+
+/* ----- buttons css ends here ----- */
+
+/* ----- messages css starts here ----- */
+.errorMsg {
+  color: #f21e08;
+  background: #fff0f0;
+  padding: 10px;
+}
+
+.successMsg {
+  color: #00ff00;
+  background: #077707;
+  padding: 10px;
+}
+
+.centered-message {
+  width: 500px;
+  margin: auto;
+}
+
+.message {
+  color: #0e1b1e;
+  font-size: 25px;
+  margin-left: 10px;
+}
+
+.loading-msg {
+  text-align: center;
+  font-size: 200%;
+  height: 200px;
+  line-height: 200px;
+}
+
+/* ----- messages css ends here ----- */
+
+.custom-toast {
+  width: 100%;
+  padding: 10px;
+  position: absolute;
+  background: #ccc;
+  color: #666;
+  font-size: 200%;
+  text-align: center;
+  left: 0;
+  top: 0;
+  right: 0;
+  animation: slideDown 3s;
+}
+
+@keyframes slideDown {
+  0%,
+  100% {
+    -webkit-transform: translateY(-100px);
+  }
+  10%,
+  90% {
+    -webkit-transform: translateY(0px);
+  }
+}
+
+.disabled {
+  pointer-events: none;
+  opacity: 0.3;
+}
