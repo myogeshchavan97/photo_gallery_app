@@ -1,15 +1,15 @@
-import axios from "axios";
-import { BASE_API_URL } from "../utils/constants";
-import { getErrors } from "./errors";
+import axios from 'axios';
+import { BASE_API_URL } from '../utils/constants';
+import { getErrors } from './errors';
 
 export const beginAddPhoto = (photo) => {
   return async (dispatch) => {
     try {
       const formData = new FormData();
-      formData.append("photo", photo);
+      formData.append('photo', photo);
       await axios.post(`${BASE_API_URL}/photos`, formData, {
         headers: {
-          "Content-Type": "multipart/form-data"
+          'Content-Type': 'multipart/form-data'
         }
       });
     } catch (error) {
@@ -30,6 +30,6 @@ export const startLoadPhotos = () => {
 };
 
 export const loadPhotos = (photos) => ({
-  type: "LOAD_PHOTOS",
+  type: 'LOAD_PHOTOS',
   photos
 });

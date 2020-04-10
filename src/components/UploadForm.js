@@ -1,11 +1,20 @@
-import React, { useState } from "react";
-import { connect } from "react-redux";
-import { Form, Button } from "react-bootstrap";
-import { beginAddPhoto } from "../actions/photos";
+import React, { useState, useEffect } from 'react';
+import { connect } from 'react-redux';
+import { Form, Button } from 'react-bootstrap';
+import { beginAddPhoto } from '../actions/photos';
 
 const UploadForm = (props) => {
   const [photo, setPhoto] = useState(null);
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [errorMsg, setErroMsg] = useState(null);
+
+  useEffect(() => {
+    setErroMsg(props.errors);
+  }, [props.errors]);
+
+  useEffect(() => {
+    setErroMsg(''); // reset error message on page load
+  }, []);
 
   const handleOnChange = (event) => {
     const file = event.target.files[0];
@@ -15,6 +24,7 @@ const UploadForm = (props) => {
   const handleFormSubmit = (event) => {
     event.preventDefault();
     if (photo) {
+      setErroMsg('');
       props.dispatch(beginAddPhoto(photo));
       setIsSubmitted(true);
     }
@@ -22,8 +32,8 @@ const UploadForm = (props) => {
 
   return (
     <React.Fragment>
-      {props.errors && props.errors.upload_error ? (
-        <p className="errorMsg centered-message">{props.errors.upload_error}</p>
+      {errorMsg && errorMsg.upload_error ? (
+        <p className="errorMsg centered-message">{errorMsg.upload_error}</p>
       ) : (
         isSubmitted && (
           <p className="successMsg centered-message">
@@ -38,13 +48,13 @@ const UploadForm = (props) => {
         className="upload-form"
       >
         <Form.Group>
-          <Form.Label>Choose Photo to upload</Form.Label>
+          <Form.Label>Choose photo to upload</Form.Label>
           <Form.Control type="file" name="photo" onChange={handleOnChange} />
         </Form.Group>
         <Button
           variant="primary"
           type="submit"
-          className={`${!photo ? "disabled submit-btn" : "submit-btn"}`}
+          className={`${!photo ? 'disabled submit-btn' : 'submit-btn'}`}
           disabled={photo ? false : true}
         >
           Upload

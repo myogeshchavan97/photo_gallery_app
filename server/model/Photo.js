@@ -1,4 +1,4 @@
-const mongoose = require("mongoose");
+const mongoose = require('mongoose');
 
 const PhotoSchema = mongoose.Schema({
   photo: {
@@ -12,6 +12,6 @@ PhotoSchema.methods.toJSON = function () {
   return result;
 };
 
-const Photo = mongoose.model("Photo", PhotoSchema);
+const Photo = mongoose.model('Photo', PhotoSchema);
 
 module.exports = Photo;

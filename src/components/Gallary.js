@@ -1,9 +1,9 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 
-import React, { useEffect, useState } from "react";
-import { connect } from "react-redux";
-import { startLoadPhotos } from "../actions/photos";
-import Photo from "./Photo";
+import React, { useEffect, useState } from 'react';
+import { connect } from 'react-redux';
+import { startLoadPhotos } from '../actions/photos';
+import Photo from './Photo';
 
 const Gallary = (props) => {
   const [isLoading, setIsLoading] = useState(false);

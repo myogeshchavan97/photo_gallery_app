@@ -1,5 +1,5 @@
-import React from "react";
-import UploadForm from "./UploadForm";
+import React from 'react';
+import UploadForm from './UploadForm';
 
 const HomePage = () => (
   <div className="home-page">

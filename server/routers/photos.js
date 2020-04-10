@@ -1,6 +1,6 @@
-const express = require("express");
-const multer = require("multer");
-const Photo = require("../model/Photo");
+const express = require('express');
+const multer = require('multer');
+const Photo = require('../model/Photo');
 const Router = express.Router();
 
 const upload = multer({
@@ -9,15 +9,15 @@ const upload = multer({
   },
   fileFilter(req, file, cb) {
     if (!file.originalname.match(/\.(jpeg|jpg)$/)) {
-      cb(new Error("only upload files with jpg or jpeg format."));
+      cb(new Error('only upload files with jpg or jpeg format.'));
     }
     cb(undefined, true); // continue with upload
   }
 });
 
 Router.post(
-  "/photos",
-  upload.single("photo"),
+  '/photos',
+  upload.single('photo'),
   async (req, res) => {
     try {
       const photo = new Photo(req.body);
@@ -28,7 +28,7 @@ Router.post(
       res.status(201).send({ _id: photo._id });
     } catch (error) {
       res.status(400).send({
-        upload_error: "Error while uploading file...Try again later."
+        upload_error: 'Error while uploading file...Try again later.'
       });
     }
   },
@@ -41,22 +41,22 @@ Router.post(
   }
 );
 
-Router.get("/photos", async (req, res) => {
+Router.get('/photos', async (req, res) => {
   try {
     const photos = await Photo.find({});
     res.send(photos);
   } catch (error) {
-    res.status(400).send({ get_error: "Error while getting list of photos." });
+    res.status(400).send({ get_error: 'Error while getting list of photos.' });
   }
 });
 
-Router.get("/photos/:id", async (req, res) => {
+Router.get('/photos/:id', async (req, res) => {
   try {
     const result = await Photo.findById(req.params.id);
-    res.set("Content-Type", "image/jpeg");
+    res.set('Content-Type', 'image/jpeg');
     res.send(result.photo);
   } catch (error) {
-    res.status(400).send({ get_error: "Error while getting photo." });
+    res.status(400).send({ get_error: 'Error while getting photo.' });
   }
 });
 

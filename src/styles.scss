@@ -1,28 +1,32 @@
+html {
+  font-size: 62.5%;
+}
+
 body {
   background: linear-gradient(141deg, #9fb8ad 0%, #1fc8db 51%, #2cb5e8 75%);
   font-family: Noto Sans, Helvetica, sans-serif;
   color: #666;
   letter-spacing: 1px;
-  padding: 10px;
   min-height: 100vh;
+  font-size: 1.6rem;
 }
 
 /* ----- header css starts here ----- */
 
 header {
   text-align: center;
-  margin: 10px 0 10px 0;
+  margin: 2rem 0 1rem 0;
 
   .links {
     text-transform: uppercase;
     text-align: center;
     font-size: 150%;
-    margin-top: 20px;
+    margin-top: 4rem;
 
     .link:link,
     .link:visited {
-      padding: 5px 10px;
-      margin: 20px;
+      padding: 0.5rem 1rem;
+      margin: 2rem;
       color: #fff;
       text-decoration: none;
       text-transform: uppercase;
@@ -38,10 +42,11 @@ header {
 }
 
 h1 {
-  text-shadow: 0 0 20px #fefcc9, 10px -10px 30px #feec85,
-    -20px -20px 40px #ffae34, 20px -40px 50px #ec760c, -20px -60px 60px #cd4606,
-    0 -80px 70px #973716, 10px -90px 80px #451b0e;
+  text-shadow: 0 0 2rem #fefcc9, 1rem -1rem 3rem #feec85,
+    -2rem -2rem 4rem #ffae34, 2rem -4rem 5rem #ec760c, -2rem -6rem 6rem #cd4606,
+    0 -8rem 6rem #973716, 1rem -9rem 8rem #451b0e;
   display: inline-block;
+  font-size: 200%;
 }
 
 h1,
@@ -54,14 +59,14 @@ h2 {
 /* ----- main content css starts here ----- */
 
 .home-page {
-  margin-top: 20px;
+  margin-top: 2rem;
 }
 
 .upload-form {
   width: 60%;
   margin: auto;
-  margin-top: 20px;
-  padding: 20px;
+  margin-top: 2rem;
+  padding: 2rem;
   border: 1px solid #000;
   padding-left: 20%;
   background: #eee;
@@ -69,26 +74,26 @@ h2 {
 
 .main-content {
   width: 80%;
-  margin: auto auto 100px auto;
+  margin: auto auto 10rem auto;
 }
 
 .photos-list {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
 
   .photo {
-    width: 288px;
+    width: 28.8rem;
     overflow: hidden;
-    margin: 10px;
+    margin: 1rem;
 
     img {
       width: 100%;
-      height: 300px;
+      height: 30rem;
       transform: scale(1.1);
-      transition: all 0.5s;
-
+      transition: all 1s;
       &:hover {
-        transform: scale(1.03);
+        transform: scale(1.01);
       }
     }
   }
@@ -99,11 +104,12 @@ h2 {
 /* ----- buttons css starts here----- */
 
 button {
-  margin-right: 5px;
+  margin-right: 0.5rem;
 }
 
 .submit-btn {
-  margin-top: 20px;
+  margin-top: 2rem;
+  font-size: 1.6rem;
 }
 
 .disabled {
@@ -116,31 +122,53 @@ button {
 .errorMsg {
   color: #f21e08;
   background: #fff0f0;
-  padding: 10px;
+  padding: 1rem;
 }
 
 .successMsg {
   color: #00ff00;
   background: #077707;
-  padding: 10px;
+  padding: 1rem;
 }
 
 .centered-message {
-  width: 500px;
+  width: 50rem;
   margin: auto;
 }
 
 .message {
   color: #0e1b1e;
-  font-size: 25px;
-  margin-left: 10px;
+  font-size: 2.5rem;
+  margin-left: 1rem;
 }
 
 .loading-msg {
   text-align: center;
   font-size: 200%;
-  height: 200px;
-  line-height: 200px;
+  height: 20rem;
+  line-height: 20rem;
 }
 
 /* ----- messages css ends here ----- */
+
+@media only screen and (max-width: 1200px) {
+  .main-content {
+    width: 100%;
+  }
+}
+
+@media only screen and (max-width: 620px) {
+  body {
+    font-size: 1.3rem;
+  }
+
+  .main-content {
+    width: 100%;
+  }
+
+  .photos-list {
+    .photo {
+      width: 80%;
+    }
+  }
+}
