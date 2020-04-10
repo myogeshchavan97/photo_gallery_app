@@ -44,7 +44,7 @@ const UploadForm = (props) => {
         <Button
           variant="primary"
           type="submit"
-          className="submit-btn"
+          className={`${!photo ? "disabled submit-btn" : "submit-btn"}`}
           disabled={photo ? false : true}
         >
           Upload

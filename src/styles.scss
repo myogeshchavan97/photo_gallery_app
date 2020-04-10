@@ -76,31 +76,12 @@ h2 {
   margin: auto auto 100px auto;
 }
 
-.main {
-  margin-left: 10px;
-}
-
-.form {
-  width: 50%;
-  float: left;
-  margin-bottom: 50px;
-}
-
-.book-list {
+.photos-list {
   display: flex;
   flex-wrap: wrap;
 }
 
-.main-image {
-  text-align: center;
-  margin-top: 20px;
-  img {
-    width: 285px;
-    height: 200px;
-  }
-}
-
-.book {
+.photo {
   margin: 10px;
   width: 288px;
   overflow: hidden;
@@ -111,33 +92,6 @@ h2 {
   }
 }
 
-.main-form {
-  color: #222222;
-  font-size: 18px;
-  width: 70%;
-  margin: auto;
-}
-
-.input-control {
-  border: 1px solid #ccc;
-  color: #555555;
-  background-color: #fff;
-  height: 46px;
-  font-size: 18px;
-  line-height: 1.3333333;
-  border-radius: 0;
-  display: block;
-  margin-bottom: 30px;
-  padding: 10px;
-  width: 100%;
-
-  &:focus {
-    outline: none;
-    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075),
-      0 0 8px rgba(23, 24, 24, 0.6);
-    border: 1px solid #cecece;
-  }
-}
 /* ----- main content css ends here----- */
 
 /* ----- buttons css starts here----- */
@@ -147,18 +101,11 @@ button {
 }
 
 .submit-btn {
-  margin-top: 1rem;
+  margin-top: 20px;
 }
 
-.login {
-  text-align: center;
-  padding: 10px;
-  height: 200px;
-  line-height: 200px;
-
-  button {
-    font-size: 20px;
-  }
+.disabled {
+  pointer-events: none;
 }
 
 /* ----- buttons css ends here ----- */
@@ -195,33 +142,3 @@ button {
 }
 
 /* ----- messages css ends here ----- */
-
-.custom-toast {
-  width: 100%;
-  padding: 10px;
-  position: absolute;
-  background: #ccc;
-  color: #666;
-  font-size: 200%;
-  text-align: center;
-  left: 0;
-  top: 0;
-  right: 0;
-  animation: slideDown 3s;
-}
-
-@keyframes slideDown {
-  0%,
-  100% {
-    -webkit-transform: translateY(-100px);
-  }
-  10%,
-  90% {
-    -webkit-transform: translateY(0px);
-  }
-}
-
-.disabled {
-  pointer-events: none;
-  opacity: 0.3;
-}

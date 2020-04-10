@@ -20,7 +20,7 @@ const Gallary = (props) => {
   }, [props.photos]);
 
   return (
-    <div className="book-list">
+    <div className="photos-list">
       {props.errors && props.errors.get_error && (
         <p className="errorMsg centered-message">{props.errors.get_error}</p>
       )}

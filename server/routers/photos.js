@@ -34,7 +34,6 @@ Router.post(
   },
   (error, req, res, next) => {
     if (error) {
-      console.log(error);
       res.status(400).send({
         upload_error: error.message
       });
