@@ -13,7 +13,7 @@ export const beginAddPhoto = (photo) => {
         }
       });
     } catch (error) {
-      dispatch(getErrors(error.response.data));
+      error.response && dispatch(getErrors(error.response.data));
     }
   };
 };
@@ -24,7 +24,7 @@ export const startLoadPhotos = () => {
       const photos = await axios.get(`${BASE_API_URL}/photos`);
       dispatch(loadPhotos(photos.data));
     } catch (error) {
-      dispatch(getErrors(error.response.data));
+      error.response && dispatch(getErrors(error.response.data));
     }
   };
 };

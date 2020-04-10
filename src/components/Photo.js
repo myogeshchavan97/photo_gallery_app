@@ -8,8 +8,6 @@ const Photo = ({ id }) => {
         variant="top"
         src={`http://localhost:3300/photos/${id}`}
         alt="Photo"
-        width="350"
-        height="350"
       />
     </Card>
   );
