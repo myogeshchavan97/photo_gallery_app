@@ -5,29 +5,29 @@ import { connect } from 'react-redux';
 import { startLoadPhotos } from '../actions/photos';
 import Photo from './Photo';
 
-const Gallary = (props) => {
+const Gallary = ({ errors, photos, dispatch }) => {
   const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
     setIsLoading(true);
-    props.dispatch(startLoadPhotos());
+    dispatch(startLoadPhotos());
   }, []);
 
   useEffect(() => {
-    if (props.photos.length > 0) {
+    if (photos.length > 0) {
       setIsLoading(false);
     }
-  }, [props.photos]);
+  }, [photos]);
 
   return (
     <div className="photos-list">
-      {props.errors && props.errors.get_error && (
-        <p className="errorMsg centered-message">{props.errors.get_error}</p>
+      {errors && errors.get_error && (
+        <p className="errorMsg centered-message">{errors.get_error}</p>
       )}
       {isLoading ? (
         <div className="loading-msg centered-message">Loading...</div>
       ) : (
-        props.photos.map((photo) => <Photo key={photo._id} id={photo._id} />)
+        photos.map((photo) => <Photo key={photo._id} id={photo._id} />)
       )}
     </div>
   );

@@ -27,14 +27,14 @@ Router.post(
       await photo.save();
       res.status(201).send({ _id: photo._id });
     } catch (error) {
-      res.status(400).send({
+      res.status(500).send({
         upload_error: 'Error while uploading file...Try again later.'
       });
     }
   },
   (error, req, res, next) => {
     if (error) {
-      res.status(400).send({
+      res.status(500).send({
         upload_error: error.message
       });
     }
@@ -46,7 +46,7 @@ Router.get('/photos', async (req, res) => {
     const photos = await Photo.find({});
     res.send(photos);
   } catch (error) {
-    res.status(400).send({ get_error: 'Error while getting list of photos.' });
+    res.status(500).send({ get_error: 'Error while getting list of photos.' });
   }
 });
 

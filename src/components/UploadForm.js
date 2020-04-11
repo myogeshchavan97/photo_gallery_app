@@ -3,14 +3,14 @@ import { connect } from 'react-redux';
 import { Form, Button } from 'react-bootstrap';
 import { beginAddPhoto } from '../actions/photos';
 
-const UploadForm = (props) => {
+const UploadForm = ({ errors, dispatch }) => {
   const [photo, setPhoto] = useState(null);
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [errorMsg, setErroMsg] = useState(null);
 
   useEffect(() => {
-    setErroMsg(props.errors);
-  }, [props.errors]);
+    setErroMsg(errors);
+  }, [errors]);
 
   useEffect(() => {
     setErroMsg(''); // reset error message on page load
@@ -25,7 +25,7 @@ const UploadForm = (props) => {
     event.preventDefault();
     if (photo) {
       setErroMsg('');
-      props.dispatch(beginAddPhoto(photo));
+      dispatch(beginAddPhoto(photo));
       setIsSubmitted(true);
     }
   };
